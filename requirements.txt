@@ -38,7 +38,7 @@ monotonic==1.5
 more-itertools==5.0.0
 msgpack==1.0.0
 numpy==1.16.6
-opencv-python==4.2.0.32
+opencv-python==4.3.0.38
 packaging==20.9
 pandas==0.24.2
 pathlib2==2.3.5
