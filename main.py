@@ -1,7 +1,9 @@
-from fastapi import FastAPI
+from flask import Flask
 
-app = FastAPI()
+app = Flask(__name__)
 
-@app.get('/')
+@app.route('/')
 def index():
-    return 'Hello World!'
+    return 'Web App with Python Flask!'
+
+app.run(host='0.0.0.0', port=81)
