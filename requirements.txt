@@ -14,7 +14,6 @@ contextlib2==0.6.0.post1
 cryptography==3.3.2
 datadog==0.35.0
 datadog-checks-base==25.0.1
-datadog-get-events @ file:///Users/muhammad.awais/Desktop/Python100Days/events-testing
 ddtrace==0.53.2
 decorator==4.4.2
 distlib==0.3.0
