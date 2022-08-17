@@ -1,12 +1,18 @@
-# For more information, please refer to https://aka.ms/vscode-docker-python
-FROM python:3.8
-# working directory
-WORKDIR /user/src/app
-# copy all files to the container
-COPY .  .
-# Install pip requirements
-RUN python -m pip install --no-cache-dir -r requirements.txt
-# port number to expose
-EXPOSE 5000
-# run the command
-CMD ["python", "./app.py"]
+# Base image
+FROM python:3.9
+
+# Set environment varibles
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+WORKDIR /app
+
+COPY requirements.txt /app/requirements.txt
+
+RUN pip install -r /app/requirements.txt
+
+COPY . /app
+
+EXPOSE 80
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
